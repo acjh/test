@@ -1,0 +1,11 @@
+language: python
+python:
+  - "3.6"
+sudo: required
+dist: bionic
+before_install:
+  - virtualenv --version
+  - deactivate
+  - virtualenv --version
+script:
+  - python3 -W error::DeprecationWarning -c 'import distutils'
