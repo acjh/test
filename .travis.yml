@@ -1,11 +1,13 @@
 language: python
 python:
   - "3.6"
-  - "3.7"
 sudo: required
 dist: bionic
 before_install:
-  - cp /usr/lib/python3.6/distutils/__init__.py /home/travis/virtualenv/python3.6.7/lib/python3.6/distutils/__init__.py
-  - cp /usr/lib/python3.6/distutils/__init__.py /home/travis/virtualenv/python3.7.1/lib/python3.7/distutils/__init__.py
+  - deactivate
+  - pip install virtualenv==16.3.0
+  - rm -r ~/virtualenv/python3.6.7
+  - virtualenv --python=/opt/python/3.6.7/bin/python3.6.7 ~/virtualenv/python3.6.7
+  - source ~/virtualenv/python3.6/bin/activate
 script:
   - python -W error::DeprecationWarning -c 'import distutils'
