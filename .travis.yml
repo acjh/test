@@ -6,6 +6,6 @@ sudo: required
 dist: bionic
 before_install:
   - cp /usr/lib/python3.6/distutils/__init__.py /home/travis/virtualenv/python3.6.7/lib/python3.6/distutils/__init__.py
-  - cp /usr/lib/python3.7/distutils/__init__.py /home/travis/virtualenv/python3.7.1/lib/python3.7/distutils/__init__.py
+  - cp /usr/lib/python3.6/distutils/__init__.py /home/travis/virtualenv/python3.7.1/lib/python3.7/distutils/__init__.py
 script:
   - python -W error::DeprecationWarning -c 'import distutils'
