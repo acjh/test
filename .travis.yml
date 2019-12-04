@@ -10,5 +10,7 @@ before_install:
   - virtualenv --version
   - source ~/virtualenv/newenv/bin/activate
   - virtualenv --version
+install:
+  -
 script:
   - python -W error::DeprecationWarning -c 'import distutils'
