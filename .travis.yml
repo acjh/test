@@ -6,11 +6,11 @@ python:
 sudo: required
 dist: bionic
 before_install:
-  - virtualenv ~/virtualenv/tmpenv
+  - virtualenv /tmp/env --no-setuptools --no-pip --no-wheel
   - DISTUTILS_PATH=lib/python$TRAVIS_PYTHON_VERSION/distutils
   - rm -r ~/virtualenv/python$TRAVIS_PYTHON_VERSION/$DISTUTILS_PATH
-  - mv ~/virtualenv/tmpenv/$DISTUTILS_PATH ~/virtualenv/python$TRAVIS_PYTHON_VERSION/
-  - rm -r ~/virtualenv/tmpenv
+  - mv /tmp/env/$DISTUTILS_PATH ~/virtualenv/python$TRAVIS_PYTHON_VERSION/
+  - virtualenv --version
 install: skip
 script:
   - python -W error::DeprecationWarning -c 'import distutils'
