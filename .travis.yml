@@ -3,11 +3,10 @@ python:
   - "3.5"
   - "3.6"
   - "3.7"
-sudo: required
+os: linux
 dist: bionic
-before_install:
-  - python -c 'import os, virtualenv; virtualenv.install_distutils(os.environ["VIRTUAL_ENV"])'
-  - virtualenv --version
 install: skip
+before_script:
+  - python -c 'import os, virtualenv; virtualenv.install_distutils(os.environ["VIRTUAL_ENV"])'
 script:
   - python -W error::DeprecationWarning -c 'import distutils'
