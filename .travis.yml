@@ -6,10 +6,7 @@ python:
 sudo: required
 dist: bionic
 before_install:
-  - virtualenv /tmp/env --no-setuptools --no-pip --no-wheel
-  - DISTUTILS_PATH=lib/python$TRAVIS_PYTHON_VERSION/distutils
-  - rm -r ~/virtualenv/python$TRAVIS_PYTHON_VERSION/$DISTUTILS_PATH
-  - mv /tmp/env/$DISTUTILS_PATH ~/virtualenv/python$TRAVIS_PYTHON_VERSION/
+  - python -c 'import os, virtualenv; virtualenv.install_distutils(os.environ["VIRTUAL_ENV"])'
   - virtualenv --version
 install: skip
 script:
