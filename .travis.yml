@@ -5,6 +5,6 @@ script:
   - curl google.com
   - ifconfig
   - sudo ifconfig docker0 down
-  - sudo ifconfig ens4 down
+  - # sudo ifconfig ens4 down
   - ifconfig
   - curl google.com
