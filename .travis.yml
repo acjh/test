@@ -1,12 +1,5 @@
 language: python
-python:
-  - "3.5"
-  - "3.6"
-  - "3.7"
 os: linux
-dist: bionic
 install: skip
-before_script:
-  - python -c 'import os, virtualenv; virtualenv.install_distutils(os.environ["VIRTUAL_ENV"])'
 script:
-  - python -W error::DeprecationWarning -c 'import distutils'
+  - ifconfig
